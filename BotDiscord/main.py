@@ -8,4 +8,4 @@ class myClient(discord.Client):
         print(message)
 
 client= myClient()
-client.run("ODAwMjgxMzE1MDEzNDI3MjMw.YAP2Dg.WSOywjdklre2QgvLp4LK8UCzriA")
+client.run("")
