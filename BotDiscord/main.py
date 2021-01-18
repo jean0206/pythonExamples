@@ -1,11 +1,23 @@
 import discord
+from configparser import ConfigParser
+from discord.ext import commands
 
-class myClient(discord.Client):
-    async def on_ready(self):
-        print(self.user)
+file= "settings.ini"
+config=ConfigParser()
+config.read(file)
 
-    async def on_message(self,message):
-        print(message)
+bot=commands.Bot(command_prefix='>')
 
-client= myClient()
-client.run("")
+@bot.event
+async def on_member_join(member):
+    await member.send('Hola,Puto')
+
+@bot.command()
+async def definir_futuro(ctx):
+    await ctx.send('David será un wen ingeniero')
+
+@bot.command()
+async def sumar(ctx,numOne:int, numTwo:int):
+    await ctx.send("El resultado de la suma es:",numOne+numTwo)
+
+bot.run(config['key']['public_key'])
