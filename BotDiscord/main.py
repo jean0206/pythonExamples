@@ -7,7 +7,7 @@ config=ConfigParser()
 config.read(file)
 
 bot=commands.Bot(command_prefix='>')
-
+#Holajeje
 @bot.event
 async def on_member_join(member):
     await member.send('Hola,Puto')
